@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.w3.org/2001/XMLSchema">
+
+<!--complexType section-->
+
+<xs:complexType name="meters.type">
+	<xs:sequence>
+		<xs:element name="meters" type="xs:string"/>
+		<!--may need to change fixed value-->
+		<xs:attribute name="id" type="xs:string" fixed="m4006"/>
+		<!-- metercategory -->
+			<xs:element name="maxStay" type ="xs:string"/>
+			<xs:element name="operationalDay" type="xs:string"/>
+			
+				
+	    </xs:element>
+	</xs:sequence>
+</xs:complexType>
+
+
+<!-- simpleType definitions -->
+<xs:simpleType name="meters.type">
+	<xs:restriction base="xs:integer">
+		<xs:maxInclusive value="12"/>
+	<xs:restriction/>
+<xs:simpleType/>
+</xs:schema>
