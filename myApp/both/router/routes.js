@@ -9,3 +9,9 @@ FlowRouter.route('/sharemarket',{
         FlowLayout.render('layout', {sidebar: 'sidebar', home: 'sharemarket', cart: 'cart'})
     }
 });
+
+FlowRouter.route('/login',{
+    action:function(){
+        FlowLayout.render('layout', {sidebar: '', home: 'login', cart: ''})
+    }
+});
