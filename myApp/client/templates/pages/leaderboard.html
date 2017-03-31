@@ -1,7 +1,9 @@
 <template name="leaderboard">
-    <!--add leaderboard stuff here-->
-    To do list:
-    Add leaderboard section
-    Add dummy players 
-    Add mock leaderboard
+   
+    <ul>
+        {{#each player}}
+        <li>Player: {{name}} | Assets: {{assets}}</li>
+    {{/each}}
+    </ul>
+    
 </template>

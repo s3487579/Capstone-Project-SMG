@@ -22,3 +22,4 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 meteorhacks:flow-layout
 meteorhacks:flow-router
 mrt:bootstrap-3
+meteortoys:allthings

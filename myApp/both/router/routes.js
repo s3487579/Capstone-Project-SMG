@@ -15,3 +15,9 @@ FlowRouter.route('/login',{
         FlowLayout.render('layout', {sidebar: '', home: 'login', cart: ''})
     }
 });
+
+FlowRouter.route('/leaderboard',{
+    action:function(){
+        FlowLayout.render('layout', {sidebar: '', home: 'leaderboard', cart: ''})
+    }
+});
