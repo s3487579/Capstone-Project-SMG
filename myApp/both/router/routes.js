@@ -28,3 +28,9 @@ FlowRouter.route('/leaderboard',{
         FlowLayout.render('layout', {sidebar: '', home: 'leaderboard', cart: ''})
     }
 });
+
+FlowRouter.route('/register',{
+    action:function(){
+        FlowLayout.render('layout', {sidebar: '', home: 'register', cart: ''})
+    }
+});
