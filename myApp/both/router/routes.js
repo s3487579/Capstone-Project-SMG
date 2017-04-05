@@ -1,36 +1,57 @@
 FlowRouter.route('/',{
     action:function(){
-        FlowLayout.render('layout', {sidebar: 'sidebar', home: 'home', cart: 'cart'})
+        BlazeLayout.render('layout', {sidebar: 'sidebar', home: 'home', cart: 'cart'})
     }
 });
 
 FlowRouter.route('/sharemarket',{
     action:function(){
-        FlowLayout.render('layout', {sidebar: 'sidebar', home: 'sharemarket', cart: 'cart'})
+        BlazeLayout.render('layout', {sidebar: 'sidebar', home: 'sharemarket', cart: 'cart'})
     }
 });
 
 FlowRouter.route('/leaderboard',{
     action:function(){
-        FlowLayout.render('layout', {sidebar: 'sidebar', home: 'leaderboard', cart: 'cart'})
+        BlazeLayout.render('layout', {sidebar: 'sidebar', home: 'leaderboard', cart: 'cart'})
     }
 });
 
 FlowRouter.route('/login',{
     action:function(){
-        FlowLayout.render('layout', {sidebar: '', home: 'login', cart: ''})
+       BlazeLayout.render('layout', {sidebar: '', home: 'login', cart: ''})
     }
 });
 
+FlowRouter.route('/logout',{
+   action:function(){
+       Meteor.logout(function(err){
+           if(!err){
+               FlowRouter.go('/login');
+           }
+       })
+   }
+});
 
 FlowRouter.route('/leaderboard',{
     action:function(){
-        FlowLayout.render('layout', {sidebar: '', home: 'leaderboard', cart: ''})
+        BlazeLayout.render('layout', {sidebar: '', home: 'leaderboard', cart: ''})
     }
 });
 
-FlowRouter.route('/register',{
+FlowRouter.route('/adminMain',{
     action:function(){
-        FlowLayout.render('layout', {sidebar: '', home: 'register', cart: ''})
+        if(Roles.userIsInRole(Meteor.userId(), 'admin')){
+        BlazeLayout.render('layout', {sidebar: 'adminSidebar', home: 'adminMain', cart: ''})
+    }else{
+        BlazeLayout.render('layout', {sidebar: '', home: 'unauthorized', cart: ''})
+        }
     }
 });
+
+FlowRouter.route('/playerManage',{
+    action:function(){
+        BlazeLayout.render('layout', {sidebar: 'adminSidebar', home: 'playerManage', cart: ''})
+    }
+});
+
+

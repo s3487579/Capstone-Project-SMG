@@ -31,35 +31,40 @@
                             <i class="glyphicon glyphicon-stats"></i>    
                         </a>
                     </li>
-                    
+                {{#if isInRole 'admin'}}
                     <li>
-                        <a href="">RESEARCH
+                        <a href="/adminMain">ADMIN
                             <i class="glyphicon glyphicon-align-left"></i>
                         </a>
                     </li>
-                    
-                    <li>
-                        <a href="">HELP
-                            <i class="glyphicon glyphicon-plus"></i>
-                        </a>
-                    </li>
+                 {{/if}}
+                  
                    
                 </ul>
-
+                
+                
+            {{#if currentUser}}
+                <ul class="nav navbar-nav navbar-right">
+                 
+                    <li>
+                            <a href="/logout">{{currentUser.profile.profileName}} SIGN OUT 
+                                <i class="glyphicon glyphicon-lock"></i>
+                            </a>
+                        </li>
+                </ul>
+            {{else}}
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                  
                         <li>
-                            <a href="/login">LOGIN
+                            <a href="/login">SIGN IN
                                 <i class="glyphicon glyphicon-lock"></i>
                             </a>
                         </li>
-                        <li>
-                            <a href="/register">REGISTER
-                                <i class="fa fa-key"></i>
-                            </a>
-                        </li>
+                        
                 </ul>
+            
+        {{/if}}
             </div>
       </nav>
 </template>

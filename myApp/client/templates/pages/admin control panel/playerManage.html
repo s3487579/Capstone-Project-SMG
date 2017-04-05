@@ -1,0 +1,22 @@
+<template name="playerManage">
+   
+        
+            <table>
+                
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>DisplayName</th>
+                </tr>
+                
+             {{#each allUsers}}    
+                <tr>
+                    <td>{{_id}}</td>
+                    <td>{{email}}</td>
+                    <td>{{profile.profileName}}</td>
+                </tr>
+               {{/each}}
+   
+            </table>
+          
+</template>

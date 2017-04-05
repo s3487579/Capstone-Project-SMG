@@ -12,4 +12,4 @@ if(Meteor.isServer){
     // this code only runs on the server
 }
 
-//finish this part for leaderboard dummy code.
+

@@ -1,4 +1,11 @@
 <template name ="login">
+  
+   {{> atForm}}
+   
+   {{#if currentUser}}
+   <h1>Welcome {{currentUser.profile.profileName}}</h1>
+   {{/if}}
+<!--
     <div class="container">
     <div class="row">
 
@@ -9,10 +16,10 @@
                     
 
                         <div class="">
-                            <label for="email" class="col-md-4 control-label">Username</label>
+                            <label for="username" class="col-md-4 control-label">Username</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="">
+                                <input id="username" type="text" class="form-control" name="username" value="">
 
                             </div>
                         </div>
@@ -21,7 +28,7 @@
                             <label for="password" class="col-md-4 control-label">Password</label>
             
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
+                                <input id="password" type="text" class="form-control" name="password">
                             </div>
                         </div>
 
@@ -50,4 +57,5 @@
         
     </div>
 </div>
+-->
 </template>
