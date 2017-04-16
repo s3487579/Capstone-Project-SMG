@@ -1,0 +1,1 @@
+ContactMails = new Mongo.Collection('contactMail');

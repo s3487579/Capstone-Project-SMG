@@ -1,0 +1,17 @@
+<template name = "adminMail">
+    <h1>Admin Mail</h1>
+    
+    <ul class="list-group">
+        {{#each mailList}}
+            {{>eachMail}}
+        {{/each}}
+    </ul>
+</template>
+
+<template name = "eachMail">
+    <li class="list-group-item">
+        <p>{{Email}}</p>
+        <p>{{ProfileName}}</p>
+        <p>{{Message}}</p>
+    </li>
+</template>

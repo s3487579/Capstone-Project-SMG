@@ -1,7 +1,16 @@
   .navbar-default {
         background: linear-gradient(#1E90FF, black);
         border:0;
-    }            
+    } 
+   
+    .navbar-brand {
+      padding: 0px;
+    }
+    .navbar-brand>img {
+      height: 100%;
+      padding: 15px;
+      width: auto;
+    }
     
     .navbar-default .navbar-nav > li > a {
         color:white;

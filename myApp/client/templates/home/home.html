@@ -1,6 +1,10 @@
     
    <template name="home">
-        <h1>Welcome to Meteor!</h1>
-           TESTING
+          {{#if currentUser}}
+              <h1>Welcome {{currentUser.profile.profileName}}!</h1>
+          {{else}}
+              <h1>Welcome to INVESTR!</h1>
+              To play this game, please register your account!
+          {{/if}}
     </template>
     

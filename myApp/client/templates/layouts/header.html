@@ -6,7 +6,9 @@
 
                 <!-- Branding Image -->
                 <a class="pull-left" href="">
-                 <!-- <img src="" height="50px"> -->
+                <a class="navbar-brand" href="http://google.com"><img src="/documentation/logo.png" alt="Investr logo">
+                 </a>
+                <!-- <img src="https://www.dropbox.com/s/3cllcra564osunw/Logo.png?dl=0" height="50px"> -->
                  
                 </a>
             </div>
@@ -19,18 +21,7 @@
                             <i class="glyphicon glyphicon-home"></i>
                         </a>
                     </li>
-                    
-                    <li>
-                        <a href="/sharemarket">SHARE MARKET
-                            <i class="glyphicon glyphicon-usd"></i>    
-                        </a>
-                    </li>
-			
-                    <li>
-                        <a href="/leaderboard">LEADERBOARD
-                            <i class="glyphicon glyphicon-stats"></i>    
-                        </a>
-                    </li>
+	
                 {{#if isInRole 'admin'}}
                     <li>
                         <a href="/adminMain">ADMIN
@@ -39,13 +30,19 @@
                     </li>
                  {{/if}}
                   
-                   
+                 {{#if isInRole 'player-user'}}
+                     <li>
+                        <a href="/contact">CONTACT
+                        
+                        </a>
+                    </li>
+                 {{/if}}
                 </ul>
                 
                 
             {{#if currentUser}}
                 <ul class="nav navbar-nav navbar-right">
-                 
+                        
                     <li>
                             <a href="/logout">{{currentUser.profile.profileName}} SIGN OUT 
                                 <i class="glyphicon glyphicon-lock"></i>

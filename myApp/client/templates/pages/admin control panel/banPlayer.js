@@ -1,0 +1,3 @@
+   /** 'click .ban':function(){
+        var    
+    }**/

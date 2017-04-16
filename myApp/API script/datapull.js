@@ -1,34 +1,35 @@
-/**(function ($) {
-    $('button').on('click', function () {
-        // remove resultset if this has already been run
-        $('.content ul').remove();
-        // add spinner to indicate something is happening
-        $('<i class="fa fa-refresh fa-spin"/>').appendTo('body');
+    var apiCall = function (apiUrl, callback) 
+    {
+    
+      
+      try 
+      {
+        var response = HTTP.get(apiUrl).data;
+        callback(null, response);
+      }
+      catch (error)
+      {
+        if (error.response)
+        {
+          var errorCode = error.response.data.code;
+          var errorMessage = error.response.data.message;
         
-        // get selected zip code from selectbox
-        var zip = $('select option:selected').text().substring(1, 6);
-
-        // make AJAX call
-        $.getJSON('http://data.colorado.gov/resource/4ykn-tg5h.json?entitystatus=Good%20Standing&principalzipcode=' + zip, function (data) {
-            
-            // do all this on success       
-            var items = [],
-                $ul;
-            
-            $.each(data, function (key, val) {
-                //iterate through the returned data and build a list
-                items.push('<li id="' + key + '"><span class="name">' + val.entityname + '</span><br><span class="addr">' + val.principaladdress1 + '</span> <span class="city">' + val.principalcity + '</span></li>');
-            });
-            
-            // remove spinner
-            $('.fa-spin').remove();
-            
-            // append list to page
-            $ul = $('<ul />').appendTo('.content');
-            
-            //append list items to list
-            $ul.append(items);
-        });
+        } else
+        {
+          var errorCode = 500;
+          var errorMessage = 'Cannot access the API';
+        }
+        
+        var myError = new Meteor.Error(errorCode, errorMessage);
+        callback(myError, null);
+      }
+    }
+    
+    Meteor.methods({
+      'geoJsonForIp': function (ip) {
+        this.unblock();
+        var apiUrl = 'http://finance.yahoo.com/d/quotes.csv' + ip;
+        var response = Meteor.wrapAsync(apiCall)(apiUrl);
+        return response;
+      }
     });
-}(jQuery));
-**/

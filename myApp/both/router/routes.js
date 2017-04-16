@@ -1,6 +1,10 @@
 FlowRouter.route('/',{
     action:function(){
-        BlazeLayout.render('layout', {sidebar: 'sidebar', home: 'home', cart: 'cart'})
+        if(Roles.userIsInRole(Meteor.userId(), 'player-user')){
+        BlazeLayout.render('layout', {sidebar: 'sidebar', home: 'home', cart: ''})
+    }else{
+        BlazeLayout.render('layout', {sidebar: '', home: 'home', cart: ''})
+        }
     }
 });
 
@@ -32,9 +36,16 @@ FlowRouter.route('/logout',{
    }
 });
 
-FlowRouter.route('/leaderboard',{
+
+FlowRouter.route('/profile',{
     action:function(){
-        BlazeLayout.render('layout', {sidebar: '', home: 'leaderboard', cart: ''})
+        BlazeLayout.render('layout', {sidebar: 'sidebar', home: 'profile', cart: ''})
+    }
+});
+
+FlowRouter.route('/contact',{
+    action:function(){
+        BlazeLayout.render('layout', {sidebar: '', home: 'contact', cart: ''})
     }
 });
 
@@ -54,4 +65,9 @@ FlowRouter.route('/playerManage',{
     }
 });
 
+FlowRouter.route('/adminMail',{
+    action:function(){
+        BlazeLayout.render('layout', {sidebar: 'adminSidebar', home: 'adminMail', cart: ''})
+    }
+});
 

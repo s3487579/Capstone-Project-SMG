@@ -18,7 +18,7 @@ ecmascript@0.6.3              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.2.3            # Server-side component of the `meteor shell` command
 
 autopublish@1.0.7             # Publish all data to the clients (for prototyping)
-insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
+
 
 kadira:flow-router
 kadira:blaze-layout
@@ -33,3 +33,4 @@ aldeed:template-extension@3.4.3
 aldeed:collection2
 raix:handlebar-helpers
 fortawesome:fontawesome
+

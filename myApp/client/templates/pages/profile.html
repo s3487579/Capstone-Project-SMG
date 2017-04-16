@@ -1,0 +1,16 @@
+<template name="profile">
+    Welcome, {{currentUser.profile.profileName}}
+        <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Balance</th>
+                </tr>
+        <tr>
+            <td>{{currentUser.profile.profileName}}</td>
+            <td>{{currentUser.emails}}</td>
+            <td>${{currentUser.profile.amount}}</td>
+        </tr>
+        
+        </table>
+</template>

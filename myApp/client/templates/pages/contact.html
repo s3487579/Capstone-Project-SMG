@@ -1,0 +1,47 @@
+<template name="contact">
+    <div class="container">
+    <div class="row">
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><p>CONTACT US</p></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" action="" id="contactUs">
+
+                        <div>
+                            <label for="email" class="col-md-4 control-label">Email</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="text" class="form-control" name="email" placeholder="email" required>
+
+                            </div>
+                        </div>
+
+                        <div>
+                             <label for="email" class="col-md-4 control-label">Profile Name</label>
+                             
+                             <div class="col-md-6">
+                                <input id="username" type="text" class="form-control" name="username" value="{{currentUser.profile.profileName}}" required>
+                            </div>
+                        </div>
+                        
+                            <div class="col-md-6 col-md-offset-4">
+                                <label for='msgBox'>Message</label>
+                                <textarea id = "msgBox" class="form-control" rows="7" placeholder="enter your message here" required>
+                                    
+                                </textarea>
+                            </div>
+         
+                 
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-default">
+                                    Send Mail
+                                </button>
+                            </div>
+                        
+                    </form>
+                </div>
+            </div>
+        
+    </div>
+</div>
+</template>
