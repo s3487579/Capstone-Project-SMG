@@ -8,5 +8,8 @@ Template.playerManage.helpers({
 
 
 Template.leaderboard.helpers({
-    allUsers(){return Meteor.users.find({}); },
+    allUsers(){return Meteor.users.find({}, {
+        sort: { amount: -1, profileName: 1 }
+    }); },
 })
+
