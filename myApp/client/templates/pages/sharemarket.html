@@ -1,7 +1,45 @@
 
 <template name="sharemarket">
   <h1>Share Market Page</h1>
-        	Home page when a user logs in.
+  <body>
+    {{#if currentUser}}
+      <div class="sidebar">
+        <form class="add-stock">
+          <input type="text" name="symbol" placeholder="Search for a symbol..." />
+        </form>
+
+        <ul>
+          {{#each stocks}}
+            {{> stock}}
+          {{/each}}
+        </ul>
+
+        {{#if hasStocks}}
+          <div class="fav-filter">
+            Filter favourites
+          </div>
+        {{else}}
+          <div class="no-stocks">
+            To get started, add a stock by typing its symbol (e.g. aapl, goog etc)
+            in the search box above
+          </div>
+        {{/if}}
+
+      </div>
+
+      <div>
+        {{#with selectedStock}}
+          {{> stockDetail}}
+        {{/with}}
+      </div>
+    {{else}}
+      <div class="no-login">
+        Sign up or log in to get started
+      </div>
+    {{/if}}
+  </body>
   </template>
   
-
+ 
+  
+  

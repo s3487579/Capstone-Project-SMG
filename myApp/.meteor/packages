@@ -1,6 +1,6 @@
 # Meteor packages used by this project, one per line.
 # Check this file (and the other files in this directory) into your repository.
-#
+# 
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
@@ -17,9 +17,9 @@ es5-shim@4.6.15                # ECMAScript 5 compatibility for older browsers.
 ecmascript@0.6.3              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.2.3            # Server-side component of the `meteor shell` command
 
-autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 
-mwei:app.meteor.finance
+
+
 kadira:flow-router
 kadira:blaze-layout
 mrt:bootstrap-3
@@ -31,6 +31,8 @@ useraccounts:unstyled
 alanning:roles
 aldeed:template-extension@3.4.3
 aldeed:collection2
-raix:handlebar-helpers
-fortawesome:fontawesome
+ajbarry:yahoo-finance
+autopublish@1.0.7  
+jhuenges:highstock
+
 
