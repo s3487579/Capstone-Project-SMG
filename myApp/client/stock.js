@@ -1,4 +1,4 @@
-Template.stock.events({
+/**Template.stock.events({
   "click .toggle-favourite": function() {
     Meteor.call("setFavourite", this._id, !this.favourite);
   },
@@ -29,3 +29,4 @@ Template.stock.helpers({
     return Stocks.find({symbol: this.symbol}).count();
   }
 });
+**/

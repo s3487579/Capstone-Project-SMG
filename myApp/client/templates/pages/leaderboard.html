@@ -6,10 +6,27 @@
 
 <h1>Current Leaderboard</h1>
 
-    <ol>
-        {{#each allUsers}}
-        <li>Player: {{profile.profileName}} | Assets: {{profile.amount}}</li>
-    {{/each}}
-    </ol>
-    
+<table>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Current Portfolio Value</th>
+              
+          <!--    <tr>
+                  <td><ol type="I">
+                      <li>
+                          
+                      </li>
+                  </ol></td>
+              </tr> -->
+              
+         {{#each allUsers}}
+           <tr>
+               <td></td>
+               <td>{{profile.profileName}}</td>
+               <td>{{profile.amount}} </td>
+             
+            </tr>
+             {{/each}}
+ 
+        </table>
 </template>

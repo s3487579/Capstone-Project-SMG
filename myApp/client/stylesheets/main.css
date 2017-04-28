@@ -1,5 +1,5 @@
   .navbar-default {
-        background: linear-gradient(#1E90FF, black);
+        background: #428bca;
         border:0;
     } 
    
@@ -32,7 +32,7 @@
 		left:0px;
 		width:100%;
 		color:white;
-		background:	linear-gradient(#1E90FF, black);
+		background: #428bca;
 		padding:8px;
 	}
 	
@@ -52,20 +52,125 @@
         background-color:white;
     }
     
-    p{
-        text-align:center;
-        letter-spacing: 1px;
-        font-size:20px;
+    
+    .panel-default > .panel-heading {
+         background: #428bca;
+    }
+    
+    /* login section*/
+    
+   .wrapper{
+    background:#eee;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.3);
+    padding: 10px;
+}
+
+    span{
+        letter-spacing: 2px;
+    }
+
+    /*end login section*/
+    
+    /*player control panel section*/
+    
+        table {
+        counter-reset: rowNumber;
+    }
+    
+    table tr {
+        counter-increment: rowNumber;
+    }
+    
+    table tr td:first-child::before {
+        content: counter(rowNumber);
+        min-width: 1em;
+        margin-right: 0.5em;
+    }
+
+    tr{
+        border: 1px solid black;
+    }
+    th{
+        background:#428bca;
+        color:white;
+        border: 1px solid black;
+        padding: 10px;
+    }
+    
+    td{
+        border: 1px solid black;
+        padding: 10px;
+    }
+    /*end player control panel*/
+
+    /*sidebar styling*/
+    
+    .sideList {
+        background: #eee;
+        list-style-type: none;
+        height: 800px;
+        padding: 10px;
+    }
+    
+     
+     .sideList > li > a {
+        color:black;
+    }
+    
+     .sideList > li:hover {
+        background-color:white;
+        transition-duration: 1s;
+    }
+    
+    .sideList > li > a{
+        font-size:20px; 
+        font-weight:bold;
+    }
+    
+    .sideList > li > a:hover{
         color:white;
     }
     
-    .panel-default > .panel-heading {
-         background: linear-gradient(#1E90FF, black);
+    .sideList > li:hover:not(.active) {
+        background-color: #555;
     }
     
-   
+    .sideList > li > a:hover:not(.active) {
+        color: white;
+    }
+    
+    /*end sidebar styling*/ 
+    
+    tr {
+        border: 1px solid black;
+    }
+    
+    th {
+        background: #428bca;
+        color: white;
+        border: 1px solid black;
+        padding: 10px;
+    }
+    
+    td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    
+    
 
-
-
-
+    /*overwrite layout*/
+    
+    .col-md-2 {
+        padding-left:0px;
+        padding-top:0px;
+        padding-bottom: 0px;
+        height:800px;
+        left: 0;
+        top: -20px;
+      
+       
+    }
+    
+    /*end overwrite layout*/
 

@@ -3,17 +3,12 @@
 <template name="layout">
    {{> headertop}}
  
-    <div class="container fluid">
         <div class="col-md-2">
             {{> Template.dynamic template=sidebar}}
         </div>
-        <div class="col-md-8">
+        <div class="col-md-10">
             {{> Template.dynamic template=home}}
         </div>
-        <div class="col-md-2">
-            {{> Template.dynamic template=cart}}
-        </div>
-    </div>
   {{> footer}}
 </template>
 

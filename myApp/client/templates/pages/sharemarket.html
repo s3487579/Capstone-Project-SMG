@@ -6,8 +6,11 @@
       <div class="sidebar">
         <form class="add-stock">
           <input type="text" name="symbol" placeholder="Search for a symbol..." />
+          <button type="submit" class="btn btn-primary">Submit</button>
+         <!-- <button type="submit" class="input_submit" onClick="placeOrder()">Submit> -->
         </form>
-
+          // only button, does not actually work
+          
         <ul>
           {{#each stocks}}
             {{> stock}}
@@ -34,12 +37,11 @@
       </div>
     {{else}}
       <div class="no-login">
-        Sign up or log in to get started
+        <a href="/login#">Sign up</a> or <a href="/login">log in</a> to get started
       </div>
     {{/if}}
   </body>
   </template>
   
- 
-  
+
   

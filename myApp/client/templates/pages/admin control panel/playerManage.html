@@ -1,6 +1,6 @@
 <template name="playerManage">
    
-        
+        <h2><span>PLAYER MANAGEMENT CONSOLE</span></h2>
             <table>
                 
                 <tr>
@@ -14,9 +14,13 @@
                     <td>{{_id}}</td>
                     <td>{{email}}</td>
                     <td>{{profile.profileName}}</td>
+                    {{#if selectedUser}}
+                    <td>Selected Player:{{selectedUser.profile.profileName}}</td>
+                     <button class="remove">Ban Player</button>
+                    {{/if}}
                 </tr>
                {{/each}}
-           <button class="ban">Ban Player</button>
+          
             </table>
           
 </template>

@@ -13,3 +13,4 @@ Template.body.events({
     input.value = "";
   }
 });
+

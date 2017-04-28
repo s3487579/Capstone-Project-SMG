@@ -23,6 +23,7 @@ FlowRouter.route('/leaderboard',{
 FlowRouter.route('/login',{
     action:function(){
        BlazeLayout.render('layout', {sidebar: '', home: 'login', cart: ''})
+       FlowRouter.go('/home');
     }
 });
 

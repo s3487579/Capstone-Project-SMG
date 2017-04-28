@@ -1,4 +1,4 @@
-    Meteor.methods({
+  /**  Meteor.methods({
       addStock: function(symbol){
         if(!Meteor.userId()){
           throw new Meteor.Error("not-authorized");
@@ -28,3 +28,10 @@
         }
       }
     });
+    **/
+    
+    Meteor.methods({
+  getQuote: function( stockname ) {
+    return YahooFinance.snapshot({symbols: [stockname] });
+  }
+})
