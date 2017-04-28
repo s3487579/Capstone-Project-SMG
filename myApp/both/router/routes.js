@@ -40,7 +40,7 @@ FlowRouter.route('/logout',{
 
 FlowRouter.route('/profile',{
     action:function(){
-        BlazeLayout.render('layout', {sidebar: 'sidebar', home: 'profile', cart: ''})
+        BlazeLayout.render('layout', {sidebar: 'sidebarProfile', home: 'profile', cart: ''})
     }
 });
 

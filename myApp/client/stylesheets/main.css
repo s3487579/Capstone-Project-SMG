@@ -108,36 +108,35 @@
     .sideList {
         background: #eee;
         list-style-type: none;
+        padding:0px;
         height: 800px;
-        padding: 10px;
     }
     
      
      .sideList > li > a {
         color:black;
+        font-size:20px;
+    }
+    
+    .sideList > li {
+        padding: 10px; 
+        border-bottom:1px solid black;
     }
     
      .sideList > li:hover {
-        background-color:white;
+        background-color:#555;
         transition-duration: 1s;
-    }
-    
-    .sideList > li > a{
-        font-size:20px; 
-        font-weight:bold;
     }
     
     .sideList > li > a:hover{
         color:white;
     }
     
-    .sideList > li:hover:not(.active) {
-        background-color: #555;
+    .li-head{
+        background:#A9A9A9;
     }
     
-    .sideList > li > a:hover:not(.active) {
-        color: white;
-    }
+   
     
     /*end sidebar styling*/ 
     
@@ -168,8 +167,23 @@
         height:800px;
         left: 0;
         top: -20px;
+      }
       
-       
+     .btn-primary {
+         border:none;
+         padding:15px;
+         border-radius:0px;
+     }
+     
+     .btn-primary:hover {
+        color:blue;
+        background-color:white;
+        transition-duration: 1s;
+     }
+     
+    .dropdown-menu{
+        border-radius:0px;
+        background-color:#eee;
     }
     
     /*end overwrite layout*/

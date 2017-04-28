@@ -40,14 +40,23 @@
                 
                 
             {{#if currentUser}}
-                <ul class="nav navbar-nav navbar-right">
-                        
-                    <li>
-                            <a href="/logout">{{currentUser.profile.profileName}} SIGN OUT 
-                                <i class="glyphicon glyphicon-lock"></i>
-                            </a>
-                        </li>
+                        <div class="navbar-collapse collapse navbar-right" >
+                <ul class="nav navbar-nav">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                         Welcome {{currentUser.profile.profileName}} <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="/logout">Logout</a></li>
+                          <li><a href="/profile">Profile</a></li>
+                          <li><a href="#">Help</a></li>
+                          <li><a href="#">Settings</a></li>
+                        </ul>
+                      </div>
                 </ul>
+                </div>
+                        
+                
             {{else}}
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -59,7 +68,7 @@
                         </li>
                         
                 </ul>
-            
+                
         {{/if}}
             </div>
       </nav>
