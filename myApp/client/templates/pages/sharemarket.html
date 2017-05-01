@@ -1,46 +1,17 @@
 
 <template name="sharemarket">
-  <h1>Share Market Page</h1>
-  <body>
-    {{#if currentUser}}
-      <div class="sidebar">
-        <form class="add-stock">
-          <input type="text" name="symbol" placeholder="Search for a symbol..." />
-          <button type="submit" class="btn btn-info">Submit</button>
-         <!-- <button type="submit" class="input_submit" onClick="placeOrder()">Submit> -->
-        </form>
-          // only button, does not actually work
-          
-        <ul>
-          {{#each stocks}}
-            {{> stock}}
-          {{/each}}
-        </ul>
+ <h1>sharemarket</h1>
+<body>
+  <form class="add-stock">
+    <input type="text" name="symbol" placeholder="Search for a symbol..." />
+  </form>
+  <ul>
+  {{#each stocks}}
+    {{> stock}}
+  {{/each}}
+  </ul>
+</body>
 
-        {{#if hasStocks}}
-          <div class="fav-filter">
-            Filter favourites
-          </div>
-        {{else}}
-          <div class="no-stocks">
-            To get started, add a stock by typing its symbol (e.g. aapl, goog etc)
-            in the search box above
-          </div>
-        {{/if}}
-
-      </div>
-
-      <div>
-        {{#with selectedStock}}
-          {{> stockDetail}}
-        {{/with}}
-      </div>
-    {{else}}
-      <div class="no-login">
-        <a href="/login#">Sign up</a> or <a href="/login">log in</a> to get started
-      </div>
-    {{/if}}
-  </body>
   </template>
   
 
