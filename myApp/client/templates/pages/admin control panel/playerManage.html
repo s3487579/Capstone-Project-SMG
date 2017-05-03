@@ -11,16 +11,12 @@
                 
              {{#each allUsers}}    
                 <tr>
-                    <td>{{_id}}</td>
+                    <td class="user {{selectedClass}}">{{_id}}</td>
                     <td>{{email}}</td>
                     <td>{{profile.profileName}}</td>
-                    {{#if selectedUser}}
-                    <td>Selected Player:{{selectedUser.profile.profileName}}</td>
-                     <button class="remove">Ban Player</button>
-                    {{/if}}
-                </tr>
+                  </tr>
                {{/each}}
-          
+        
             </table>
-          
+             <button class="remove">Ban Player</button>
 </template>

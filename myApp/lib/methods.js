@@ -17,16 +17,31 @@ Meteor.methods({
           Stocks.insert({
             symbol: symbol,
             name: result,
+            ask: result,
             owner: Meteor.userId()
           });
         }
       });
     }
+   
   },
   removeStock: function(stockId){
     Stocks.remove(stockId);
   },
   setFavourite: function(stockId, favourite){
     Stocks.update(stockId, {$set: {favourite: favourite}});
+  },
+  getData: function(symbol){
+    var end = new Date();
+    var start = new Date(end);
+    start.setDate(start.getDate() - 365);
+  
+    return YahooFinance.historical({
+      symbol: symbol,
+      from: start,
+      to: end
+    });
   }
+  
 });
+

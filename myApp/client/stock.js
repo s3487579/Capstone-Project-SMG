@@ -13,3 +13,4 @@ Template.stock.helpers({
     return Stocks.find({symbol: this.symbol}).count();
   }
 });
+

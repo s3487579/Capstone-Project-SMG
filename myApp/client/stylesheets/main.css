@@ -188,3 +188,6 @@
     
     /*end overwrite layout*/
 
+    .selected{
+        background-color: yellow;
+    }
