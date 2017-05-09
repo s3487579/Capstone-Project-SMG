@@ -1,6 +1,5 @@
 <template name="stock">
-  <li class="stockListing">
-    
+    <br>
      <table>
                 <tr>
                     <th>Symbol</th>
@@ -8,6 +7,7 @@
                     <th>Company Name</th>
                     <th>Volume</th>
                     <th>Last Trade</th>
+                    <th>Delete</th>
                                         
                 </tr>
         <tr>
@@ -16,15 +16,15 @@
             <td>{{name.name}}</td>
             <td>{{name.volume}}</td>
             <td>{{name.lastTradePriceOnly}}</td>
+            <td><div class="options">
+                <span class="toggle-favourite"></span>
+                <span class="delete" title="Delete">X</span>
+                </div></td>
         </tr>
         
         </table>
      
-    <div class="options">
-      <span class="toggle-favourite"></span>
-      <span class="delete" title="Delete">X</span>
-    </div>
-  </li>
+    
   
   {{#with selectedStock}}
   {{> stockDetail}}

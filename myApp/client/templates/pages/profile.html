@@ -1,18 +1,68 @@
 <template name="profile">
-   <h1><center>Welcome,<bold>{{currentUser.profile.profileName}}</bold></center></h1>
-   <center>
-        <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Balance</th>
-                </tr>
-        <tr>
-            <td>{{currentUser.profile.profileName}}</td>
-            <td>{{currentUser.emails}}</td>
-            <td>${{currentUser.profile.amount}}</td>
-        </tr>
+   <div class="col-md-5">
+       <h1><center>Profile</center></h1>
+       <center>Welcome,<bold>{{currentUser.profile.profileName}}</bold></center>
+       <center>
+            <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Balance</th>
+                    </tr>
+            <tr>
+                <td>{{currentUser.profile.profileName}}</td>
+                <td>{{currentUser.emails}}</td>
+                <td>${{currentUser.profile.amount}}</td>
+            </tr>
+            
+            </table>
+        </center>
         
-        </table>
-    </center>
+        <form>
+            <input class="form-control typeahead" type="text" name="" placeholder="Search for a user..."  data-source="findUsers"/>
+          </form>
+          
+           <table>
+                
+                <tr>
+                    <th>No.</th>
+                    <th>DisplayName</th>
+                    <th>Add</th>
+                </tr>
+                
+             {{#each allUsers}} 
+
+                <tr>
+                    <td></td>
+                    <td>{{profile.profileName}}</td>
+                    <td><button class="btn btn-success" data-action="request">Add Friend</button></td>
+                  </tr>
+               {{/each}}
+        
+            </table>
+          
+          {{#each currentUser.requests}}
+          <div class="request">
+              <b>{{requester.profile.profileName}}</b> Wants to be your buddy! <button class="btn btn-success" data-action="accept">Confirm Friend Request</button>
+              <button class=" btn btn-danger" data-action="cancel">Ignore Friend Request</button>
+                </div>
+             {{else}}
+            No Friend requests :(
+          
+        {{/each}}
+    
+    </div>
+       
+     <div class="col-md-5">
+          <h2>Friends</h2>
+          <ul class="sideList">
+             {{#each currentUser.friends}}
+             <li>{{user.profile.profileName}}</li>
+             {{else}}
+             <li>No Friends :(</li>
+             {{/each}}
+              
+          </ul>
+      </div>
+      
 </template>
