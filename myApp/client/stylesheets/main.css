@@ -42,7 +42,7 @@
         position: relative;
         width: 760px;
         height: 300px;
-        border-radius:0px;
+        border-radius:0px;    
     }
     
     .panel-heading {
@@ -190,4 +190,12 @@
 
     .selected{
         background-color: yellow;
+    }
+    
+    .selectedP{
+        background-color: yellow;
+    }
+    
+    .chatBox {
+        border: 1px solid black;
     }
