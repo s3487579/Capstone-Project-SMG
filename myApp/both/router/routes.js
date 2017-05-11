@@ -14,11 +14,6 @@ FlowRouter.route('/sharemarket',{
     }
 });
 
-FlowRouter.route('/auction',{
-    action:function(){
-        BlazeLayout.render('layout', {sidebar: 'sidebar', home: 'auction', cart: 'cart'})
-    }
-});
 
 FlowRouter.route('/leaderboard',{
     action:function(){
