@@ -5,3 +5,8 @@ Meteor.publish('allUsers',function(){
 Meteor.publish("stocks", function () {
   return Stocks.find();
 });
+
+Meteor.publish("chatrooms",function(){
+  return ChatRooms.find({});
+  
+});
