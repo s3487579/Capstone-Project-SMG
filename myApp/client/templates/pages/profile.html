@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template name="profile">
    <div class="col-md-5">
        <h1><center>Profile</center></h1>
@@ -45,7 +44,7 @@
           {{#each currentUser.requests}}
           <div class="request">
               <b>{{requester.profile.profileName}}</b> Wants to be your buddy! <button class="btn btn-success" data-action="accept">Confirm Friend Request</button>
-              <button class=" btn btn-danger" data-action="cancel">Ignore Friend Request</button>
+              <button class=" btn btn-danger" data-action="deny">Ignore Friend Request</button>
                 </div>
                
                      {{else}}
@@ -65,7 +64,7 @@
              {{/each}}
               
           </ul>
-          testing commit
+      
           <div>
               {{> input}}
              <div class="chatBox">
@@ -85,5 +84,3 @@
 <template name="input">
     <p>Chat here! <input type="text" id="message"></p>
 </template>
-=======
->>>>>>> f53ddc04d727d8ddbbf90625d277e4a135648cf6
