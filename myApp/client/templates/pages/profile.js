@@ -51,7 +51,8 @@ Template.profile.events({
             var newRoom = ChatRooms.insert({chatIds:[this._id, Meteor.userId()], messages:[]});
             Session.set('roomid', newRoom);
         }
-    }
+    },
+    
 });
 
 Template.messages.helpers ({

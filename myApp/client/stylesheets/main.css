@@ -192,8 +192,8 @@
         background-color: yellow;
     }
     
-    .selectedP{
-        background-color: yellow;
+    #highlight a:focus {
+        background-color:yellow;
     }
     
     .chatBox {

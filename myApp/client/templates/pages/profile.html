@@ -58,13 +58,13 @@
           <h2>Friends</h2>
           <ul>
              {{#each currentUser.friends}}
-             <li class="person {{selectedClass}}">{{user.profile.profileName}}</li>
+             <li class="person" id="highlight"><a href="#">{{user.profile.profileName}}</a></li>
              {{else}}
              <li>No Friends :(</li>
              {{/each}}
               
           </ul>
-          
+          testing commit
           <div>
               {{> input}}
              <div class="chatBox">
