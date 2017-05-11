@@ -46,26 +46,25 @@
               <b>{{requester.profile.profileName}}</b> Wants to be your buddy! <button class="btn btn-success" data-action="accept">Confirm Friend Request</button>
               <button class=" btn btn-danger" data-action="cancel">Ignore Friend Request</button>
                 </div>
-                <center>
-                    <br>
-             {{else}}
-            No Friend requests :(
-          
+               
+                     {{else}}
+                     <br>
+           No Friend requests :(
         {{/each}}
-    </center>
+    
     </div>
        
      <div class="col-md-5">
           <h2>Friends</h2>
           <ul>
              {{#each currentUser.friends}}
-             <li class="person {{selectedClass}}">{{user.profile.profileName}}</li>
+             <li class="person" id="highlight"><a href="#">{{user.profile.profileName}}</a></li>
              {{else}}
              <li>No Friends :(</li>
              {{/each}}
               
           </ul>
-          
+          testing commit
           <div>
               {{> input}}
              <div class="chatBox">
