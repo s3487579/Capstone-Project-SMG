@@ -1,4 +1,3 @@
-
 AccountsTemplates.addFields([
     {
         _id: 'profession',

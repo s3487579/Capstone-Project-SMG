@@ -1,3 +1,4 @@
+
 Meteor.methods({
   addStock: function(symbol){
     if(!Meteor.userId()){
@@ -41,7 +42,26 @@ Meteor.methods({
       from: start,
       to: end
     });
-  }
+  },
   
+ /** addUser: function(inputName){
+    if(Meteor.isServer){
+      Meteor.call("searchUsers", inputName, function(error, result){
+         if(result !== null){
+        Stocks.insert({
+            symbol: symbol,
+            name: result,
+            ask: result,
+            owner: Meteor.userId()
+            
+          });
+        }
+      })
+    }
+  }
+  **/
 });
+
+
+ 
 
