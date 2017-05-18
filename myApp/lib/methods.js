@@ -43,6 +43,7 @@ Meteor.methods({
       to: end
     });
   },
+});
   
  /** addUser: function(inputName){
     if(Meteor.isServer){
@@ -59,9 +60,6 @@ Meteor.methods({
       })
     }
   }
-  **/
-});
-
-
+**/
  
 
