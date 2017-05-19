@@ -10,6 +10,11 @@ Meteor.methods({
   },
   removePlayer: function(_id){
     Meteor.users.remove(_id);
-  }
+  },
+     searchUsers:function(inputName){
+      var foundUser = Meteor.users.findOne({'profile.profileName': inputName});
+      console.log(foundUser.profile.profileName);
+     return foundUser;
+    },
 });
 /**List the average price of shares in possession and current number of shares held**/

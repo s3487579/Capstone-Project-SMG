@@ -10,3 +10,7 @@ Meteor.publish("chatrooms",function(){
   return ChatRooms.find({});
   
 });
+
+Meteor.publish("usersList",function(){
+  return UsersList.find({});
+})

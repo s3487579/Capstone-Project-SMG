@@ -1,12 +1,6 @@
 
 
 Template.profile.helpers({
-   findUsers: function () {
-       return Meteor.users.find().fetch.map(function(user) {
-           return user.username;
-       });
-   },
-   
     'selectedClass': function(){
             var uId = this._id;
             var selectedUser = Session.get('selectedUser');
@@ -18,7 +12,12 @@ Template.profile.helpers({
          'selectedUser': function(){
             var selectedUser = Session.get('selectedUser');
             return Meteor.users.findOne({ _id: selectedUser });
-        }
+        },
+        
+        'foundUser': function() {
+    return Session.get('foundUser');
+  }
+
 });
 
 Template.profile.events({
@@ -52,7 +51,6 @@ Template.profile.events({
             Session.set('roomid', newRoom);
         }
     },
-    
 });
 
 Template.messages.helpers ({
@@ -90,3 +88,26 @@ Template.input.events = {
     }
   }
 }
+// Template.searchBox.helpers({
+//      Meteor.call('searchUsers', inputName) 
+//   findTheUser:function (error, result){
+//         if(error){
+//             alert('Error, not found');
+//         }else{
+//             Session.set("found user", foundUser);
+//         }
+     
+//   }
+//     });
+
+Template.searchBox.events({
+    'submit .searchUsers':function (event) {
+        event.preventDefault();
+        var userName = event.target.inputName.value;
+        Meteor.call('searchUsers', userName);
+    }
+})
+
+
+
+

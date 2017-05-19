@@ -3,7 +3,7 @@
  <h1>sharemarket</h1>
 
   <form class="add-stock">
-    <input type="text" name="symbol" placeholder="Search for a symbol..." />
+    <input class="form-control typeahead" type="text" name="symbol" placeholder="Search for a symbol..." autocomplete="off" data-source="stocks"/>
   </form>
   <ul>
   {{#each stocks}}

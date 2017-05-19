@@ -8,6 +8,8 @@ Meteor.startup(function(){
        },
        'remove':function(userId, doc){
            return false;
-       }
+       },
+       
    }); 
 });
+

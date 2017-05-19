@@ -16,14 +16,10 @@
             </tr>
             
             </table>
-        </center>
-        <br>
-        <form>
-             <input class="form-control typeahead" type="text" name="" placeholder="Search for a user..."  data-source="findUsers"/>
-          </form>
-          <br>
-          <center>
+      <br>
+      {{> searchBox}}
            <table>
+      
                 
                 <tr>
                     <th>No.</th>
@@ -44,7 +40,7 @@
           {{#each currentUser.requests}}
           <div class="request">
               <b>{{requester.profile.profileName}}</b> Wants to be your buddy! <button class="btn btn-success" data-action="accept">Confirm Friend Request</button>
-              <button class=" btn btn-danger" data-action="deny">Ignore Friend Request</button>
+              <button class=" btn btn-danger" data-action="deny">Decline Friend Request</button>
                 </div>
                
                      {{else}}
@@ -83,4 +79,20 @@
 
 <template name="input">
     <p>Chat here! <input type="text" id="message"></p>
+</template>
+
+<template name="searchBox">
+  <form class="searchUsers">
+    <input type="text" name="inputName" placeholder="Search for a user brah" />
+     <input type="submit" id="insert" value="submit"/>
+  </form>
+  <ul>
+      {{#each test}}
+          {{> usersList}}
+      {{/each}}
+  </ul>
+</template>
+
+<template name="usersList">
+    {{profile.profileName}}
 </template>

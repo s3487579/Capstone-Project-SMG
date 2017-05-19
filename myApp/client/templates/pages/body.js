@@ -1,7 +1,14 @@
+Meteor.startup(function(){
+  Meteor.typeahead.inject();
+})
 Template.sharemarket.helpers({
   stocks: function () {
     return Stocks.find({owner: Meteor.userId()}, {sort: ["symbol", "asc"]});
-  }
+  },
+});
+
+Template.sharemarket.onRendered(function(){
+  Meteor.typeahead.inject();
 });
 
 Template.sharemarket.events({
