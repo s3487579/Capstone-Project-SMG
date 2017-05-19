@@ -88,6 +88,17 @@ Template.input.events = {
     }
   }
 }
+// Template.searchBox.helpers({
+//      Meteor.call('searchUsers', inputName) 
+//   findTheUser:function (error, result){
+//         if(error){
+//             alert('Error, not found');
+//         }else{
+//             Session.set("found user", foundUser);
+//         }
+     
+//   }
+//     });
 
 Template.searchBox.events({
     'submit .searchUsers':function (event) {
