@@ -110,4 +110,3 @@ Template.searchBox.events({
 
 
 
-
