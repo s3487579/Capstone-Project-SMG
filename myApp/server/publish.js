@@ -11,6 +11,10 @@ Meteor.publish("chatrooms",function(){
   
 });
 
-Meteor.publish("usersList",function(){
-  return UsersList.find({});
+Meteor.publish("userslist",function(){
+  return UserList.find({});
+})
+
+Meteor.publish('searchUsers',function(){
+  return Meteor.users.find(foundUser.profile.profileName);
 })

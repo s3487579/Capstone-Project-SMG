@@ -43,8 +43,16 @@ Meteor.methods({
       to: end
     });
   },
+  
+   searchUsers:function(inputName){
+      var foundUser = Meteor.users.findOne({'profile.profileName': inputName});
+      console.log(foundUser.profile.profileName);
+      UserList.insert({name: foundUser.profile.profileName});
+    },
 });
   
+
+
 
  
 

@@ -17,7 +17,8 @@ Template.sharemarket.helpers({
         },
         ]
    }
- }
+ },
+
 });
 
 

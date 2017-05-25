@@ -51,6 +51,7 @@ Template.profile.events({
             Session.set('roomid', newRoom);
         }
     },
+    
 });
 
 Template.messages.helpers ({
@@ -100,13 +101,32 @@ Template.input.events = {
 //   }
 //     });
 
+Template.searchBox.helpers({
+     settingstwo: function (){
+   return {
+     position: "top",
+      limit: 5,
+      rules: [
+        {
+          token: '',
+          collection: Meteor.users,
+          field: "profile.profileName",
+          template: Template.userPill2
+        },
+        ]
+ }
+ },
+ 
+});
+
 Template.searchBox.events({
-    'submit .searchUsers':function (event) {
+   'submit .searchUsers':function (event) {
         event.preventDefault();
         var userName = event.target.inputName.value;
         Meteor.call('searchUsers', userName);
     }
 })
+
 
 
 
