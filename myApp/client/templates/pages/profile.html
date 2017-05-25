@@ -18,6 +18,7 @@
             </table>
       <br>
       {{> searchBox}}
+        {{> usersList }}
            <table>
       
                 
@@ -47,7 +48,7 @@
                      <br>
            No Friend requests :(
         {{/each}}
-    
+  
     </div>
        
      <div class="col-md-5">
@@ -82,17 +83,18 @@
 </template>
 
 <template name="searchBox">
-  <form class="searchUsers">
-    <input type="text" name="inputName" placeholder="Search for a user brah" />
-     <input type="submit" id="insert" value="submit"/>
-  </form>
-  <ul>
-      {{#each test}}
-          {{> usersList}}
-      {{/each}}
-  </ul>
+   <form class="searchUsers"> 
+   {{> inputAutocomplete settings=settingstwo id="msg" name="inputName" class="input-xlarge" placeholder="Search for a user..."}}
+    <input type="submit" id="insert" value="submit"/>
+    </form>
 </template>
 
 <template name="usersList">
-    {{profile.profileName}}
+    {{#each showList}}
+        <p>Found User: {{name}}</p>
+    {{/each}}
+</template>
+
+<template name="userPill2">
+    <span class="label">{{profile.profileName}}</span>
 </template>

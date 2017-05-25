@@ -43,23 +43,16 @@ Meteor.methods({
       to: end
     });
   },
+  
+   searchUsers:function(inputName){
+      var foundUser = Meteor.users.findOne({'profile.profileName': inputName});
+      console.log(foundUser.profile.profileName);
+      UserList.insert({name: foundUser.profile.profileName});
+    },
 });
   
- /** addUser: function(inputName){
-    if(Meteor.isServer){
-      Meteor.call("searchUsers", inputName, function(error, result){
-         if(result !== null){
-        Stocks.insert({
-            symbol: symbol,
-            name: result,
-            ask: result,
-            owner: Meteor.userId()
-            
-          });
-        }
-      })
-    }
-  }
-**/
+
+
+
  
 
